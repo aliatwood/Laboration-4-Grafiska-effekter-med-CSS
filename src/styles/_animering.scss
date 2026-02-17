@@ -1,0 +1,43 @@
+@use "variables" as *;
+
+button{
+    background-color: $flash-red;
+    border-radius: 8px;
+    color: $text-light;
+    font-size: 1.5rem;
+    display: block;
+    margin: 0 auto;
+    
+    &.spinning{
+        animation-name: spin;
+        animation-duration: 2s;
+        animation-iteration-count: 1;        
+    }
+
+}
+
+@keyframes spin{
+    0%{
+        
+    }
+    25%{
+        transform: rotate(90deg);
+        scale: 1;
+        background-color: green;
+    }
+    50%{
+        transform: rotate(180deg);
+        scale: 1.5;
+        background-color: blue;
+    }
+    75%{
+        transform: rotate(270deg);
+        scale: 1;
+        background-color: yellow;
+    }
+    100%{
+        transform: rotate(360deg);
+        scale: 2;
+        background-color: grey;
+    }
+}
