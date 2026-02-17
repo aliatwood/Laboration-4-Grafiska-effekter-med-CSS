@@ -1,5 +1,33 @@
 @use "variables" as *;
 
+body{
+    animation: backgroundColorChange 5s linear infinite;
+}
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color: unset;
+        animation: backgroundColorChange 5s linear infinite;
+    }
+    main{
+        background-color: transparent;
+    }
+}
+
+@keyframes backgroundColorChange{
+    0%{
+        background-color: #1a1a2e;
+    }
+    33%{
+        background-color: #2d1b33;
+    }
+    67%{
+        background-color: #1b3a2d;
+    }
+    100%{
+        background-color: #1a1a2e;
+    }
+}
+
 button{
     background-color: $flash-red;
     border-radius: 8px;
@@ -9,10 +37,12 @@ button{
     margin: 0 auto;
     margin-top: 2rem;
 
+    &:hover{
+        cursor: pointer;
+    }
+
     &.spinning{
-        animation-name: spin;
-        animation-duration: 2s;
-        animation-iteration-count: 1;        
+        animation: spin 2s;     
     }
 
     @keyframes spin{
@@ -43,8 +73,6 @@ button{
         background-color: #FF6B6B;
     }
 }
-
-
 
 }
 img{
@@ -103,5 +131,29 @@ img:hover{
     }
     100%{
         transform: translate(0, 0);
+    }
+}
+
+.quote{
+    font-size: 1.5rem;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 1rem;
+    animation: quote 10s ease infinite;
+}
+
+@keyframes quote{
+    0%{
+        letter-spacing: 0px;
+    }
+    30%{
+        letter-spacing: 10px;
+    }
+    60%{
+        letter-spacing: 0px;
+    }
+    100%{
+        letter-spacing: 0px;
     }
 }
