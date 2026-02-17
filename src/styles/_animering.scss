@@ -7,7 +7,7 @@ button{
     font-size: 1.5rem;
     display: block;
     margin: 0 auto;
-    
+
     &.spinning{
         animation-name: spin;
         animation-duration: 2s;
@@ -24,20 +24,23 @@ button{
         transform: rotate(90deg);
         scale: 1;
         background-color: green;
+        color: #FF69B4;
     }
     50%{
         transform: rotate(180deg);
         scale: 1.5;
         background-color: blue;
+        color: #FF6600;
     }
     75%{
         transform: rotate(270deg);
         scale: 1;
         background-color: yellow;
+        color: #4B0082;
     }
     100%{
         transform: rotate(360deg);
         scale: 2;
-        background-color: grey;
+        background-color: #FF6B6B;
     }
 }
